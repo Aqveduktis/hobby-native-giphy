@@ -1,26 +1,42 @@
-import React from 'react'
-import styled from 'styled-components/native'
+import React from "react";
+import { useState, useEffect } from "react";
+import styled from "styled-components/native";
+import { GiphyChoice } from "./components/GiphyChoice";
+import { GiphyCard } from "./components/GiphyCard";
+// const api_key = "lByN5BPEwk9MR74phtPh0JpBBBBWyuVH";
+
+export const Title = styled.Text`
+  font-size: 24px;
+  color: palevioletred;
+  text-align: center;
+`;
 
 const Container = styled.View`
   flex: 1;
   background-color: papayawhip;
   justify-content: center;
-  align-items: center;
-`
+`;
 
-const Title = styled.Text`
-  font-size: 24px;
-  color: palevioletred;
-`
-
-const App = () => {
+export default function App() {
+  const [selectedValue, setSelectedValue] = useState();
+  const [giphy, setGiphy] = useState();
   return (
     <Container>
-      <Title>This is your cool app!</Title>
-      <Title>Go to App.js and start coding</Title>
-      <Title>💅💅💅</Title>
-    </Container>
-  )
-}
+      <Title> Make someone happy</Title>
+      <Title>by sharing a Giphy!</Title>
+      <GiphyChoice
+        selectedValue={selectedValue}
+        setSelectedValue={setSelectedValue}
+      />
+      <Title>{selectedValue} hej </Title>
 
-export default App
+      {selectedValue !== undefined && (
+        <GiphyCard
+          selectedValue={selectedValue}
+          giphy={giphy}
+          setGiphy={setGiphy}
+        />
+      )}
+    </Container>
+  );
+}
