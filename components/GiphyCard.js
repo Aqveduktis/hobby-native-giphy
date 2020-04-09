@@ -3,7 +3,7 @@ import styled from "styled-components/native";
 import { Image, View, Text } from "react-native";
 import { Title } from '../App';
 
-export const GiphyCard = ({ selectedValue, giphy, setGiphy }) => {
+const GiphyCard = ({ selectedValue, giphy, setGiphy }) => {
   const [done, setDone] = useState(false);
   const animalURL = `https://api.giphy.com/v1/gifs/random?api_key=lByN5BPEwk9MR74phtPh0JpBBBBWyuVH&tag=${selectedValue}&rating=G`;
 
@@ -24,3 +24,4 @@ export const GiphyCard = ({ selectedValue, giphy, setGiphy }) => {
     </View>
   );
 };
+export default GiphyCard

@@ -8,8 +8,7 @@ const StyledPicker = styled.Picker`
   color: #9839f7;
   height: 60px;
 `;
-
-export const GiphyChoice = ({ selectedValue, setSelectedValue }) => {
+const GiphyChoice = ({ selectedValue, setSelectedValue }) => {
   return (
     <StyledPicker
       selectedValue={selectedValue}
@@ -22,3 +21,5 @@ export const GiphyChoice = ({ selectedValue, setSelectedValue }) => {
     </StyledPicker>
   );
 };
+
+export default GiphyChoice

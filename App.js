@@ -1,8 +1,8 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import styled from "styled-components/native";
-import { GiphyChoice } from "./components/GiphyChoice";
-import { GiphyCard } from "./components/GiphyCard";
+import GiphyChoice from "./components/GiphyChoice";
+import GiphyCard from "./components/GiphyCard";
 // const api_key = "lByN5BPEwk9MR74phtPh0JpBBBBWyuVH";
 
 export const Title = styled.Text`
@@ -14,10 +14,10 @@ export const Title = styled.Text`
 const Container = styled.View`
   flex: 1;
   background-color: papayawhip;
-  justify-content: center;
+  justify-content: space-around;
 `;
 
-export default function App() {
+const App =() => {
   const [selectedValue, setSelectedValue] = useState();
   const [giphy, setGiphy] = useState();
   return (
@@ -40,3 +40,4 @@ export default function App() {
     </Container>
   );
 }
+export default App
